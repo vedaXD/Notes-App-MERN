@@ -1,0 +1,131 @@
+/* Container for the notes page */
+.notes-container {
+  padding: 20px;
+  background: url('./background.jpg') no-repeat center center fixed; /* Background image */
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading styling */
+h2 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Note form styling */
+.note-form {
+  background: rgba(255, 255, 255, 0.8); /* Slight transparency */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Input and textarea styling */
+.note-input,
+.note-textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Styling for the text area */
+.note-textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-size: x-large;
+}
+
+/* Submit button styling */
+.submit-button {
+  background-color: #ffb6b9;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #ff6f91;
+}
+
+/* Styles for the notes list */
+.notes-list {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.note-item {
+  background: #fff;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for note title and content */
+.note-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.note-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Button group for edit and delete buttons */
+.button-group {
+  margin-top: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  background-color: #ffb6b9;
+  border: none;
+  padding: 8px 15px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.edit-btn:hover {
+  background-color: #ff6f91;
+}
+
+.delete-btn {
+  background-color: #ff6f91;
+}
+
+.delete-btn:hover {
+  background-color: #ff4e6f;
+}
+
+/* Logout button styling */
+.logout-btn {
+  margin-top: 30px;
+  background-color: #ff6f91;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #ff4e6f;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import './Notes.css'
 
 function Notes() {
   const [notes, setNotes] = useState([])
@@ -43,24 +44,43 @@ function Notes() {
   }
 
   return (
-    <div>
+    <div className="notes-container">
       <h2>Notes</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
-        <textarea placeholder="Content" value={content} onChange={(e) => setContent(e.target.value)}></textarea>
-        <button type="submit">{editingNote ? 'Update' : 'Create'} Note</button>
+      <form onSubmit={handleSubmit} className="note-form">
+        <input 
+          type="text" 
+          placeholder="Title" 
+          value={title} 
+          onChange={(e) => setTitle(e.target.value)} 
+          className="note-input"
+        />
+        <textarea 
+          placeholder="Content" 
+          value={content} 
+          onChange={(e) => setContent(e.target.value)} 
+          className="note-textarea"
+        ></textarea>
+        <button type="submit" className="submit-button">
+          {editingNote ? 'Update' : 'Create'} Note
+        </button>
       </form>
-      <div>
+
+      <div className="notes-list">
         {notes.map((note) => (
-          <div key={note._id}>
+          <div key={note._id} className="note-item">
             <h3>{note.title}</h3>
             <p>{note.content}</p>
-            <button onClick={() => handleEdit(note)}>Edit</button>
-            <button onClick={() => handleDelete(note._id)}>Delete</button>
+            <div className="button-group">
+              <button className="edit-btn" onClick={() => handleEdit(note)}>Edit</button>
+              <button className="delete-btn" onClick={() => handleDelete(note._id)}>Delete</button>
+            </div>
           </div>
         ))}
       </div>
-      <button onClick={() => {localStorage.removeItem('token'); navigate('/')}}>Logout</button>
+
+      <button className="logout-btn" onClick={() => {localStorage.removeItem('token'); navigate('/')}}>
+        Logout
+      </button>
     </div>
   )
 }
